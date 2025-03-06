@@ -5,13 +5,12 @@ this mos has main application in operational amp,analog to digital convertors,se
 this amplifier has high input impedence:good for interfacing with other high impedence sources <br>
 provides accurate signal amplification <br>
 ## schematc diagram of mos differential amplifier
-![WhatsApp Image 2025-03-06 at 21 26 00_1677bb05](https://github.com/user-attachments/assets/7ea38691-d5c5-49b8-aec6-06cf116519cf)
+![WhatsApp Image 2025-03-07 at 01 52 55_9a3d11fa](https://github.com/user-attachments/assets/02691d27-79b5-48f9-9c83-af2dcf189a47)
 ### there are 4 types of differential amplifier<br>
 ### Resistor-Loaded Differential Pair:<br>
 *Uses resistors as the drain load.<br>
 *Simple design but has low gain due to large requirements.
 *Limited common-mode rejection and output swing.
-
 ### Current Source-Loaded Differential Pair:<br>
 Replaces Rss with Ideal current source.<br>
 Improves gain.<br>
@@ -48,17 +47,16 @@ iss-> tail current( provides stable constant current)<br>
 #### note :
 the output can be either differential orsingle ended,if the v_1=v_2 then the outpu voltage will be 0V<br>
 ### calculations of the desing part:
-![WhatsApp Image 2025-03-06 at 21 39 47_8eb292e7](https://github.com/user-attachments/assets/78fd50ee-66c8-4cd1-8e5b-a85296bbd164)
+![WhatsApp Image 2025-03-07 at 01 54 23_5b92cc3c](https://github.com/user-attachments/assets/94225a44-7122-4c79-b53c-c2daadfaa823)
 ### from LT spice we observe that
 as the VDD increases ,vout also increases and more is the gain<br>
 when width increases curret flowing also increases but vout decreases,gain is more<br>
 as RD increases vout also increases gain increases<br>
 when RSS increases gain get reduced but common mode rejection is bettered<br>
 ### case 1(resistor loaded differential pair)
-
 #### DC Analysis :
-![WhatsApp Image 2025-03-06 at 21 35 15_388a7491](https://github.com/user-attachments/assets/15491dd8-3468-4d76-895a-574ca4f32c51)
-
+![WhatsApp Image 2025-03-07 at 01 55 33_256a6ea3](https://github.com/user-attachments/assets/0129697c-959b-4155-a238-ef771357799a)
+![WhatsApp Image 2025-03-07 at 01 55 33_3ab71a4e](https://github.com/user-attachments/assets/69e18530-7eb0-4642-a15b-413b53592ecb)
 Make the necessary connections as per the circuit daigram .<br>
 Set the Rd and Rss values such that the transistors will operate in saturation region .<br>
 Vary W/L to get the required Voutcm.<br>
@@ -82,7 +80,7 @@ Use SINE(dc_offset, Amplitude, Frequency)..<br>
 Go to "Simulate" > "Edit Simulation Cmd" > "Transient"..<br>
 Set Stop Time: 5ms..<br>
 Run the simulation.
-![WhatsApp Image 2025-03-06  21 35 51_c344a928](https://github.com/user-attachments/assets/8ec5d46f-37e0-4619-8f70-c541038a2b46)9
+![WhatsApp Image 2025-03-07 at 01 55 33_288593b0](https://github.com/user-attachments/assets/7c8fd476-8c19-4869-ba48-a476e4f6f9c6)
 frrom the above graph obtaine=d we observe that there is 180 degree phase shift<br>
 it has gain of -8.978<br>(voutp-p=1.5211-0.6567,vinp-p=1.5122-0.6567=0.8555<br>
 gain =0.8644/0.8555=8.978<br>
@@ -90,7 +88,7 @@ gain =0.8644/0.8555=8.978<br>
 in the simulation tab select AC analysis<br>
 in the AC select type of the sweep as decade<br>
 enter the number of points as per decade and frequency range (0.1Hz to 1THz)<br>
-![WhatsApp Image 2025-03-06 at 21 36 32_d067629e](https://github.com/user-attachments/assets/36896d5c-77cd-49a2-98de-85623d376beb)
+![WhatsApp Image 2025-03-07 at 01 55 34_43ee4d17](https://github.com/user-attachments/assets/24cfd24b-a757-40c1-a36c-76074a0ab3aa)
 differential gain obtained is=19.563dB<br>
 ### NOW BY REPLACING RESISTOR WITH CURRENT SOURCS(Iss)<br>
 #### DC Analysis<br>
@@ -100,42 +98,46 @@ Vary W/L to get the required Voutcm.<br>
 Vary Rd to set exact Voutcm.<br>
 Go to "Simulate" > "Edit Simulation Cmd" > "DC op pnt".<br>
 ckt1 dc<br>
-![WhatsApp Image 2025-03-06 at 23 23 29_f932408a](https://github.com/user-attachments/assets/e2b78ae1-c233-43ce-8cd5-54f19d1854e4)
+![WhatsApp Image 2025-03-07 at 02 00 29_7bfe0a8b](https://github.com/user-attachments/assets/b1e9d7dd-5af7-4b39-8527-74d04aa3a22d)
 ### transient analysis<br>
 Replace DC input with an AC signal.<br>
 Use SINE(dc_offset, Amplitude, Frequency)..<br>
 Go to "Simulate" > "Edit Simulation Cmd" > "Transient"..<br>
 Set Stop Time: 5ms..<br>
 Run the simulation.
-![WhatsApp Image 2025-03-06 at 22 15 38_8bc956cf](https://github.com/user-attachments/assets/aaa5a0d4-8473-492b-ab05-9d34f29d7c4f)
+![WhatsApp Image 2025-03-07 at 02 00 29_2226a8b4](https://github.com/user-attachments/assets/206ce2a7-d14e-4146-bbe5-0e9f3aa0a713)
 there is 180 degree phase shift<br>
 9.274v/v = gain<br>
 20log(av)=20log(9.27<br)=19.3415dB
 ### AC analysis
-![Screenshot_(43) 1](https://github.com/user-attachments/assets/d4bdb438-d7a1-454a-b371-acec48ad5d39)
+![Screenshot_(43) 1](https://github.com/user-attachments/assets/c604658b-a7dd-4209-a5cc-9885cc6d48b2)
 ## BY REPLACING MOSFET<br>
-![WhatsApp Image 2025-03-06 at 23 57 01_c5f0479c](https://github.com/user-attachments/assets/fc8c604b-1e1e-41b2-b9fc-58502bb07aad)
-### DC analysis<br>
+### DC analysis
+![Screenshot (41)](https://github.com/user-attachments/assets/24773ed5-1072-4e8b-ade9-2d81aa4d16d3)
+![WhatsApp Image 2025-03-07 at 02 06 11_cd71f1d5](https://github.com/user-attachments/assets/3e86fd7d-f64d-4f66-809e-1c5c0a609fb8)
 For the dc analysis very the resistance as per the diagram to achive the given specifications<br>
 now keep length as it is n very the width that is 48.131u(M3)<br>
 120.29u(M2,M1)<br>
-![WhatsApp Image 2025-03-06 at 23 56 11_9706d173](https://github.com/user-attachments/assets/fdd61eb0-d133-4c7e-8369-c27721d1dd97)
 ### Transient Analysis<br>
-![WhatsApp Image 2025-03-06 at 23 58 53_22a1a5b4](https://github.com/user-attachments/assets/95dec01b-bec8-4968-a872-acf4994499cf)
+![WhatsApp Image 2025-03-07 at 02 06 52_9d599aca](https://github.com/user-attachments/assets/78c5bc63-526d-4d9c-bc00-36a554155ad1)
 there is 180 degree phase shift<br>
 gain is 9.7254<br>
 20log(av)=20log(9.7254)<br>
 =19.758dB
 ### AC analysis
-![WhatsApp Image 2025-03-06 at 23 59 02_d2a824eb](https://github.com/user-attachments/assets/125f1311-69fa-4849-8669-bc611772bccd)
+![WhatsApp Image 2025-03-07 at 02 06 52_0ac6ecc1](https://github.com/user-attachments/assets/ce1c56e5-fd6a-4a16-8ef9-3709eecbb25e)
 ## BONUS QUESTION
-![WhatsApp Image 2025-03-07 at 00 52 42_0ee1a913](https://github.com/user-attachments/assets/3fe3b5da-3c27-4abf-a216-eb3ecf792144)
+![WhatsApp Image 2025-03-07 at 02 08 01_adc8aee3](https://github.com/user-attachments/assets/261bf472-9735-4974-aafb-62e1fc6798e6)
+for the above question width of
+### M4,M5=22.445u<br>
+### M1,M2=120.29u<br>
+### M3=48.131u<br>
 ### DC operating point<br>
-![WhatsApp Image 2025-03-07 at 00 56 20_1ffbda4e](https://github.com/user-attachments/assets/f96cf29b-6ea8-4b40-9607-786c4d0f20bd)
+![WhatsApp Image 2025-03-07 at 02 08 01_197c3273](https://github.com/user-attachments/assets/2c623c7a-2a69-42b8-9a13-86633d8bdf92)
 ### Transient analysis<br>
-![WhatsApp Image 2025-03-07 at 00 46 09_13725223](https://github.com/user-attachments/assets/cab85991-30bc-4741-9d66-787227566fc3)
+![WhatsApp Image 2025-03-07 at 02 09 12_15788c32](https://github.com/user-attachments/assets/796491f8-bd2a-4d66-a96a-0895775c4fbb)
 ### AC analysis<br>
-![WhatsApp Image 2025-03-07 at 00 46 31_3c53c44c](https://github.com/user-attachments/assets/0461b4f1-968b-4d1f-8cc8-627ecffe9dfe)
+![WhatsApp Image 2025-03-07 at 02 09 13_d70111b9](https://github.com/user-attachments/assets/0aad3b59-e147-4bd8-b600-88e6a482096c)
 ### Result
 <table>
  <tr> 
